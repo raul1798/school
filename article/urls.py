@@ -22,7 +22,6 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^$', views.main, name='main'),
-    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
     url(r'^history/$', views.history, name='history'),
     url(r'^novosti/$', views.novosti, name='novosti'),
     url(r'^novosti/get/(?P<article_pk>[0-9]+)/$', views.novost, name='novost'),
@@ -30,6 +29,7 @@ urlpatterns = [
     url(r'^porady/', TemplateView.as_view(template_name="porady.html"), name='porady'),
     url(r'^vpravy/', TemplateView.as_view(template_name="vpravy.html"), name='vpravy'),
     url(r'^photo/', TemplateView.as_view(template_name="photo.html"), name='photo'),
+    url(r'^contact/', TemplateView.as_view(template_name="karta.html"), name='karta'),
     url(r'^dpa/$', views.dpa, name='dpa'),
     url(r'^zno/$', views.zno, name='zno'),
     url(r'^vchitel/$', views.vchitel, name='vchitel'),
