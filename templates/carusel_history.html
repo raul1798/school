@@ -1,0 +1,36 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <!-- Маркеры слайдов -->
+                  <ol class="carousel-indicators">
+                  {% for historyImage in historyImage %}
+                    <li data-target="{{ historyImage.image_pk }}" data-slide-to="{{ forloop.counter0 }}"></li>
+                   {% endfor %}
+                  </ol>
+                  <!-- Содержимое слайдов -->
+                  <div class="carousel-inner">
+
+                   {% for historyImage in historyImage %}
+                   
+                  
+             <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
+            
+                      <img src="{{ historyImage.image.url }}" class="img-rounded" alt="Cinque Terre">
+                      <div class="carousel-caption">
+                      </div>
+                      </div>
+                     
+                      {% endfor %}
+
+                    </div>
+                  <!-- Controls -->
+                 {% for historyImage in historyImage %}
+                   {% if forloop.counter >= 2 %}
+                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+                  {% else %}
+                  {% endif %}
+{% endfor %}
+                </div>

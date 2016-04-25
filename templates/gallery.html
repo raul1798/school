@@ -1,0 +1,4 @@
+{% load staticfiles %}
+{% for document in document %}
+<a href="{{ document.file.url }}"><p>{{ document.file }}</p>
+{% endfor %}

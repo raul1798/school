@@ -1,0 +1,38 @@
+{% block carusel %}
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <!-- Маркеры слайдов -->
+                  <ol class="carousel-indicators">
+                  {% for articleImage in articleImage %}
+                    <li data-target="{{ articleImage.image_pk }}" data-slide-to="{{ forloop.counter0 }}"></li>
+                   {% endfor %}
+                  </ol>
+                  <!-- Содержимое слайдов -->
+                  <div class="carousel-inner">
+
+                   {% for articleImage in articleImage %}
+                   
+                  
+             <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
+            
+                      <img src="{{ articleImage.image.url }}" class="img-rounded" alt="Cinque Terre">
+                      <div class="carousel-caption">
+                      </div>
+                      </div>
+                     
+                      {% endfor %}
+
+                    </div>
+                  <!-- Controls -->
+                 {% for articleImage in articleImage %}
+                   {% if forloop.counter >= 2 %}
+                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+                  {% else %}
+                  {% endif %}
+{% endfor %}
+                </div>
+{% endblock %}
