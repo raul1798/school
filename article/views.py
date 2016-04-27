@@ -17,7 +17,7 @@ def main(request):
 	except EmptyPage:
 		# If page is out of range (e.g. 9999), deliver last page of results.
 		contacts = paginator.page(paginator.num_pages)
-	return render(request, 'base.html', {"novosti": contacts})
+	return render(request, 'main.html', {"novosti": contacts})
 
 
 def novosti(request):

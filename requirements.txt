@@ -1,0 +1,8 @@
+Django==1.8
+django-ckeditor==5.0.3
+django-photologue==3.5.1
+django-sortedm2m==1.2.0
+ExifRead==2.1.2
+Pillow==3.1.1
+pytz==2016.3
+wheel==0.24.0

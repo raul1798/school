@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^novosti/$', views.novosti, name='novosti'),
     url(r'^novosti/get/(?P<article_pk>[0-9]+)/$', views.novost, name='novost'),
     url(r'^resursy/', TemplateView.as_view(template_name="interes.html"), name='interes'),
+    url(r'^base/', TemplateView.as_view(template_name="base.html"), name='base'),
     url(r'^porady/', TemplateView.as_view(template_name="porady.html"), name='porady'),
     url(r'^vpravy/', TemplateView.as_view(template_name="vpravy.html"), name='vpravy'),
     url(r'^photo/', TemplateView.as_view(template_name="photo.html"), name='photo'),
