@@ -22,7 +22,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^$', views.main, name='main'),
-    url(r'^history/$', views.history, name='history'),
+    url(r'^history/$', TemplateView.as_view(template_name="history.html"), name='history'),
     url(r'^novosti/$', views.novosti, name='novosti'),
     url(r'^novosti/get/(?P<article_pk>[0-9]+)/$', views.novost, name='novost'),
     url(r'^resursy/', TemplateView.as_view(template_name="interes.html"), name='interes'),
@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^contact/', TemplateView.as_view(template_name="karta.html"), name='karta'),
     url(r'^dpa/$', views.dpa, name='dpa'),
     url(r'^zno/$', views.zno, name='zno'),
+    url(r'^klassam/$', views.klassam, name='klassam'),
     url(r'^vchitel/$', views.vchitel, name='vchitel'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if not settings.DEBUG:

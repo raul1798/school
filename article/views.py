@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import ArticleImage, Article, HistoryImage, History, Zno, ZnoDoc, Dpa, DpaDoc, Vchitel, VchitelDoc
+from .models import ArticleImage, Article, Zno, ZnoDoc, Dpa, DpaDoc, Vchitel, VchitelDoc, Klassam, KlassamDoc
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
@@ -97,5 +97,16 @@ def vchitel(request):
 	'vchiteldoc': vchiteldoc
 	}
 	return render(request, 'vchitel.html', context)
+
+
+def klassam(request):
+	klassam = Klassam.objects.all()
+	klassamdoc = KlassamDoc.objects.filter()
+
+	context = {
+	'klassam': klassam,
+	'klassamdoc': klassamdoc
+	}
+	return render(request, 'classam.html', context)
 
 
